@@ -1,0 +1,19 @@
+[workspace]
+resolver = "2"
+members = ["crates/bh-assets", "crates/bh-cli", "crates/bh-viewer", "crates/bh-sim"]
+
+[workspace.package]
+edition = "2021"
+version = "0.1.0"
+publish = false
+
+[workspace.dependencies]
+anyhow = "1"
+flate2 = "1"
+clap = { version = "4", features = ["derive"] }
+
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 3
